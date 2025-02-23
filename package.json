@@ -1,0 +1,22 @@
+{
+  "name": "typewriter",
+  "version": "1.0.0",
+  "description": "example of a typewritter",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaMMartins/typewriter.git"
+  },
+  "author": "Diana Martins",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/DianaMMartins/typewriter/issues"
+  },
+  "homepage": "https://github.com/DianaMMartins/typewriter#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
