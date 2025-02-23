@@ -1,9 +1,12 @@
 const textDisplay = document.getElementById("text");
+const writer = document.getElementById("writer");
+
 let currentPhrase = [];
 let phrasesIndex = 0;
 let letterIndex = 0;
 let isDeleting = false;
 let isEnd = false;
+let isStart = true;
 
 const phrases = [
   "Hello World!",
@@ -12,14 +15,22 @@ const phrases = [
   "This is a test typewriter effect.",
 ];
 
+const addAnimation = () => {
+  writer.style.animation = "blink 0.6s infinite";
+};
+
+const removeAnimation = () => {
+  writer.style.animation = "none";
+};
+
 const updateDisplay = () => {
+  isEnd = false;
+  isStart = false;
   textDisplay.innerHTML = currentPhrase.join("");
 };
 
 const calculateSpeed = () => {
-  const speedUp = 50;
-  const normalSpeed = 150;
-  return isEnd ? 1500 : isDeleting ? speedUp : normalSpeed;
+  return isEnd || isStart ? 1800 : isDeleting ? 50 : 150;
 };
 
 const addLetter = () => {
@@ -37,10 +48,13 @@ const deleteLetter = () => {
 const handleEndOfPhrase = () => {
   isDeleting = true;
   isEnd = true;
+  isStart = false;
 };
 
 const handlePhraseCompletion = () => {
+  addAnimation();
   currentPhrase = [];
+  isStart = true;
   isDeleting = false;
   phrasesIndex++;
   if (phrasesIndex === phrases.length) {
@@ -49,19 +63,21 @@ const handlePhraseCompletion = () => {
 };
 
 const type = () => {
-  isEnd = false;
   updateDisplay();
 
   if (phrasesIndex < phrases.length) {
     if (!isDeleting && letterIndex <= phrases[phrasesIndex].length) {
       addLetter();
+      removeAnimation();
     }
 
     if (isDeleting && letterIndex <= phrases[phrasesIndex].length) {
+      removeAnimation();
       deleteLetter();
     }
 
     if (letterIndex === phrases[phrasesIndex].length) {
+      addAnimation();
       handleEndOfPhrase();
     }
 
