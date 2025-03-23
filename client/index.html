@@ -12,8 +12,18 @@
     />
   </head>
   <body>
-    <h1 id="text"></h1>
-    <div id="writer">|</div>
+    <section id="typewriter">
+        <h1 id="text"></h1>
+        <div id="writer">|</div>
+    </section>
+
+    <form action="/" method="post">
+      <p>
+        <label for="text">Write your input here...</label>
+        <input type="text" id="input" name="user_name" />
+      </p>
+    </form>
+
     <script src="../src/app.js"></script>
   </body>
 </html>

@@ -1,39 +1,50 @@
 :root {
-    --color-primary: #2C3930;
-    --color-secondary: #3F4F44;
-    --color-tertiary: #A27B5C;
-    --color-quaternary: #DCD7C9;
-    --color-quinary: #FDF7F4;
+  --color-primary: #2c3930;
+  --color-secondary: #3f4f44;
+  --color-tertiary: #a27b5c;
+  --color-quaternary: #dcd7c9;
+  --color-quinary: #fdf7f4;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    background-color: var(--color-quaternary);
-    font-family: 'Special Elite', cursive;
-    color: var(--color-primary);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: var(--color-quaternary);
+  font-family: "Special Elite", cursive;
+  color: var(--color-primary);
+}
+
+#typewriter {
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-    /* border-right: 3px solid var(--color-primary); */
-    font-size: 2rem;
-    /* height: 1.6rem; */
-    /* padding: 0.4rem 0.2rem */
+  font-size: 2rem;
 }
 
 #writer {
-    animation: blink 0.8s infinite;
-    animation-timing-function: ease-in-out;
-    font-size: 2.5rem;
+  animation: blink 0.8s infinite;
+  animation-timing-function: ease-in-out;
+  font-size: 2.5rem;
 }
 
 @keyframes blink {
-    70% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 0;
+  }
+}
+
+form {
+  height: 50vh;
+  gap: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: break-spaces;
 }
